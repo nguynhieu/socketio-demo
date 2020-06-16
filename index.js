@@ -27,6 +27,11 @@ io.on("connection", socket => {
     usersOnline.splice(indexUser, 1);
     io.sockets.emit("server-send-list-users", usersOnline)
   })
+
+  socket.on("user-send-messenger", data => {
+    socket.emit("server-msg-of-sender", data);
+    socket.broadcast.emit("server-send-msg", data);
+  })
 })
 
 app.set('view engine', 'pug')

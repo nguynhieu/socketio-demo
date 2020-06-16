@@ -14,6 +14,21 @@ socket.on("server-send-success-register", data => {
     $('#loginForm').show(1000);
     $('#chatForm').hide(500);
   })
+
+  $('#btnSend').click(() => {
+    socket.emit("user-send-messenger", {
+      messenger: $('#txtMessage').val(),
+      username: data
+    });
+  })
+})
+
+socket.on("server-msg-of-sender", data => {
+  $("#listMessages").append(`<div class="messengerOfme"><p>${data.messenger}</p></div>`);
+})
+
+socket.on("server-send-msg", data => {
+  $("#listMessages").append(`<div class="messengerOfother"><p>${data.messenger}</p></div>`);
 })
 
 socket.on("server-send-list-users", data => {

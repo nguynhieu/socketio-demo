@@ -33,6 +33,11 @@ h1 {
   padding: .5rem;
 }
 
+#left #user-online {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
 #left {
   width: 30%;
   background: beige;
@@ -40,6 +45,41 @@ h1 {
 
 #left h3 {
   margin-bottom: 1rem;
+}
+
+#listMessages {
+  height: 230px;
+  overflow-y: scroll;
+  padding: 0 1rem;
+  margin-top: 1rem;
+}
+
+#listMessages .messengerOfme {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#listMessages .messengerOfme p {
+  background: cornflowerblue;
+  border-radius: .325rem;
+  padding: .325rem;
+  max-width: 280px;
+}
+
+#listMessages .messengerOfme {
+  margin-bottom: .5rem;
+}
+
+#listMessages .messengerOfother {
+  display: flex;
+  margin-bottom: .5rem;
+}
+
+#listMessages .messengerOfother p {
+  max-width: 280px;
+  background: rgb(219, 213, 213);
+  padding: .325rem;
+  border-radius: .325rem;
 }
 
 #right {
