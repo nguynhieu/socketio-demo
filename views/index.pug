@@ -3,7 +3,24 @@ html
     script(src="https://code.jquery.com/jquery-3.5.1.min.js")
     script(src="socket.io/socket.io.js")
     script(src="script.js")
-      
+    link(rel="stylesheet", href="styles.css")
   body
     h1 Home
-    
+    div(id="wrapper")
+      div(id="loginForm")
+        h3 Your name
+        input(type="text", id="txtUsername")
+        input(type="button", value="Register", id="btnRegister")
+      div(id="chatForm")
+        div(id="left")
+          h3(id="chatFormTitle") User online
+          div(id="user-online")
+        div(id="right")
+          div(id="sayHi") 
+            span Hello
+            span(id="currentUser")
+            button(id="btnLogout") Logout
+          div(id="listMessages")
+          div(id="messengerAcction")
+            input(type="text" id="txtMessage")
+            button(id="btnSend") Send
