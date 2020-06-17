@@ -20,6 +20,7 @@ io.on("connection", socket => {
       usersOnline.push(data);
       socket.emit("server-send-success-register", data)
       io.sockets.emit("server-send-list-users", usersOnline)
+      // 
     }
   })
   socket.on("user-send-logout", data => {
